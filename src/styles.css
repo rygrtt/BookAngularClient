@@ -1,1 +1,156 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Application-wide Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+h1 {
+  color: #369;
+  font-family: Calibri, sans-serif;
+  font-size: 250%;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, san-serif;
+  font-size: 14px;
+  color: black;
+}
+
+.form-box {
+  margin: auto;
+  width: 450px;
+  padding: 15px 35px 35px 35px;
+  border: groove cadetblue 2px;
+  height: 300px;
+
+}
+
+.form-button {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 2px;
+  font-size: 100%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border-radius: 4px;
+}
+
+.form-button:hover {
+  background-color: lightgrey;
+}
+
+.form-button:active {
+  background-color: darkgrey;
+}
+
+.form-button-box {
+  padding: 10px 2px;
+}
+
+.label-add {
+  display: inline-block;
+  clear: left;
+  width: 200px;
+  text-align: left;
+  margin: 2px;
+
+}
+
+.title-boxes {
+  color: black;
+  font-size: 18px;
+  font-family: Georgia, serif;
+  padding: 0;
+  margin: 2px 4px 0 1px;
+}
+
+.ul-boxes {
+  display: block;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.li-boxes {
+  margin: 0;
+  padding: 0;
+}
+
+.li-button {
+  padding: 1px;
+  float: left;
+  text-align: left;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: inherit;
+  -webkit-transition-duration: 0.15s; /* Safari */
+  transition-duration: 0.15s;
+}
+
+.boxes {
+  position: relative;
+  border: solid 1px dodgerblue;
+  background-color: snow;
+  margin: 3px;
+  width: 48%;
+  height: 300px;
+  padding: 4px;
+}
+
+.li-button:hover {
+  width: 100%;
+  background-color: cadetblue;
+  padding: 1px;
+}
+
+.li-button:active {
+  width: 100%;
+  background-color: darkseagreen;
+}
+
+.add-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-style: groove;
+  padding: 4px 10px;
+  margin: 2px;
+  background-color: lightgrey;
+  font-size: 100%;
+  font-family: Arial, Helvetica, san-serif;
+  color: black;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.add-button:hover {
+  background-color: lightgrey;
+}
+
+.add-button:active {
+  background-color: darkgrey;
+}

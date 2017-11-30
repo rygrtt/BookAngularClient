@@ -1,0 +1,57 @@
+<div class="form-box">
+  <p class="title-boxes">Enter Book Info</p>
+  <form #addBookForm="ngForm" (ngSubmit)="addBook()">
+
+    <label class="label-add">Title*:
+      <input required type="text" class="form-add" id="title" name="title"
+             [(ngModel)]="title" placeholder=""/>
+    </label>
+    <br/>
+
+    <label class="label-add">Author First Name*:
+      <input required type="text" class="form-add" id="aFname" name="aFname"
+             [(ngModel)]="aFName" placeholder=""/>
+    </label>
+
+    <label class="label-add">Author Last Name*:
+      <input required type="text" class="form-add" id="aLname" name="aLname"
+             [(ngModel)]="aLName" placeholder=""/>
+    </label>
+    <br />
+
+    <label class="label-add">Translator First Name:
+      <input type="text" class="form-add" id="tFname" name="tFname"
+             [(ngModel)]="tFName" placeholder=""/>
+    </label>
+
+    <label class="label-add">Translator Last Name:
+      <input type="text" class="form-add" id="tLname" name="tLname"
+             [(ngModel)]="tLName" placeholder=""/>
+    </label>
+    <br/>
+
+    <label class="label-add">Publisher*:
+      <input required type="text" class="form-add" id="publisher" name="publisher"
+             [(ngModel)]="publisher" placeholder=""/>
+    </label>
+
+    <label class="label-add">Year of Publication*:
+      <input required type="number" class="form-add" id="yearPublished" name="yearPublished"
+             [(ngModel)]="yearPublished" placeholder=""/>
+    </label>
+    <br/>
+
+    <label class="label-add">Edition:
+      <input type="text" class="form-add" id="edition" name="edition"
+             [(ngModel)]="edition" placeholder=""/>
+    </label>
+    <br/>
+    <div class="form-button-box">
+      <button type="submit" class="form-button">Add Book</button>
+      <button class="form-button">Cancel</button>
+    </div>
+  </form>
+
+  {{bookService.getMessage()}}
+
+</div>

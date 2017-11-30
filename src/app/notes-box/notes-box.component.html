@@ -1,0 +1,14 @@
+<div class="boxes notes-box">
+  <p class="title-boxes">Notes</p>
+
+  <div>
+    <ul class="ul-boxes">
+      <li *ngFor="let note of notes" class="li-boxes">
+        <button (click)="doLoadNoteView(note)" id="{{note.noteId}}" class="li-button">
+          {{ note.text }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <button class="add-button">Add Note</button>
+</div>

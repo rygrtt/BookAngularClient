@@ -1,0 +1,10 @@
+.big-box {
+  border-left: solid 1px dodgerblue;
+  border-right: solid 1px dodgerblue;
+  background-color: lavender;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+  height: 100%;
+}
+

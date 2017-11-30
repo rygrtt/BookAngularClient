@@ -1,0 +1,29 @@
+<div class="form-box">
+  <div class="message">{{message}}  </div>
+  <form #loginForm="ngForm" (ngSubmit)="login()">
+    <label class="label-login">User name:
+      <input required type="text" class="form-login" id="username" name="username"
+             [(ngModel)]="username" placeholder="name"
+             #uname="ngModel"/>
+
+    </label>
+    <div [hidden]="uname.valid || uname.pristine"
+         class="alert">
+      Required
+    </div>
+    <br/>
+    <label class="label-login">Password:
+      <input required type="password" class="form-login" id="password" name="password"
+             [(ngModel)]="password" placeholder="password"
+             #pword="ngModel"/>
+
+    </label>
+    <div [hidden]="pword.valid || pword.pristine"
+         class="alert">
+      Required
+    </div>
+    <br/>
+    <button type="submit" class="">Login</button>
+    <button class="">New User</button>
+  </form>
+</div>

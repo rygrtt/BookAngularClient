@@ -1,0 +1,13 @@
+<div class="boxes book-box">
+  <p class="title-boxes">Books</p>
+  <ul class="ul-boxes">
+    <li *ngFor="let book of books" class="li-boxes">
+      <button class="li-button" (click)="doLoadNotes(book.bookId)" id="{{book.bookId}}">
+        {{ book.title }}
+      </button>
+    </li>
+  </ul>
+
+  <a class="add-button" routerLink="/add-book">Add Book</a>
+
+</div>
