@@ -34,7 +34,7 @@ export class BookBoxComponent implements OnInit {
       });
   }
 
-  doLoadNotes(bookId: number): void {
-    this.loadingService.loadNotes(bookId);
+  loadNotes(book: Book): void {
+    this.loadingService.loadNotes(book);
   }
 }

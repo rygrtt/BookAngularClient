@@ -36,7 +36,7 @@ export class NotesBoxComponent implements OnInit, AfterViewChecked {
     this.loadingService.setNotesAsUpdated();
   }
 
-  doLoadNoteView(note: Note): void {
+  loadNoteView(note: Note): void {
     this.loadingService.loadNoteCitation(note);
   }
 }

@@ -4,11 +4,11 @@
   <div>
     <ul class="ul-boxes">
       <li *ngFor="let note of notes" class="li-boxes">
-        <button (click)="doLoadNoteView(note)" id="{{note.noteId}}" class="li-button">
+        <button (click)="loadNoteView(note)" id="{{note.noteId}}" class="li-button">
           {{ note.text }}
         </button>
       </li>
     </ul>
   </div>
-  <button class="add-button">Add Note</button>
+  <a *ngIf="notes != null" class="add-button" routerLink="/add-note">Add Note</a>
 </div>

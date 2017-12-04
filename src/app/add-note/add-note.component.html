@@ -1,28 +1,30 @@
 <div class="form-box">
-  <form #loginForm="ngForm" (ngSubmit)="login()">
-    <label class="label-login">User name:
-      <input required type="text" class="form-login" id="username" name="username"
-             [(ngModel)]="username" placeholder="name"
-             #uname="ngModel"/>
+  <p class="title-boxes">Adding note to <i>{{book.title}}</i></p>
+  <form #addNoteForm="ngForm" (ngSubmit)="addNote()">
 
+    <label class="label-add">Text*:
+      <input required type="text" class="form-add" id="text" name="text"
+             [(ngModel)]="text" placeholder=""/>
     </label>
-    <div [hidden]="uname.valid || uname.pristine"
-         class="alert">
-      Required
-    </div>
     <br/>
-    <label class="label-login">Password:
-      <input required type="password" class="form-login" id="password" name="password"
-             [(ngModel)]="password" placeholder="password"
-             #pword="ngModel"/>
 
+    <label class="label-add">Start Page*:
+      <input required type="number" class="form-add" id="pageNoteBegins" name="pageNoteBegins"
+             [(ngModel)]="pageNoteBegins" placeholder=""/>
     </label>
-    <div [hidden]="pword.valid || pword.pristine"
-         class="alert">
-      Required
+
+    <label class="label-add">End Page*:
+      <input required type="number" class="form-add" id="pageNoteEnds" name="pageNoteEnds"
+             [(ngModel)]="pageNoteEnds" placeholder=""/>
+    </label>
+    <br />
+
+    <div class="form-button-box">
+      <button type="submit" class="form-button">Add Note</button>
+      <button (click)="goBack()" class="form-button">Back to Notes</button>
     </div>
-    <br/>
-    <button type="submit" class="">Login</button>
-    <button class="">New User</button>
   </form>
+
+  {{noteService.getMessage()}}
+
 </div>

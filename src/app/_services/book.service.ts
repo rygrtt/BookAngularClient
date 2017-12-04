@@ -5,7 +5,6 @@ import {Observable} from 'rxjs/Observable';
 import {JwtHelper} from 'angular2-jwt';
 import {catchError} from 'rxjs/operators';
 import {ErrorHandlerService} from './error-handler.service';
-import {AddBookWrapper} from '../_models/add-book-wrapper';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
@@ -14,6 +13,7 @@ export class BookService {
   private bookUrl = 'http://localhost:8080/api/books';
   jwtHelper: JwtHelper = new JwtHelper();
 
+  // TODO: global message service?
   private message = new BehaviorSubject<string>('');
 
   constructor(private http: HttpClient,
@@ -22,6 +22,10 @@ export class BookService {
 
   getMessage(): string {
     return this.message.getValue();
+  }
+
+  clearMessage(): void {
+    this.message.next('');
   }
 
   getBooks(): Observable<Book[]> {
@@ -53,14 +57,13 @@ export class BookService {
       '&tfirstname=' + tFName +
       '&tlastname=' + tLName;
 
-    /*const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    headers.set('Authorization', 'Bearer ' + token);*/
-    // .set('Authorization', 'Bearer ' + token)
-
     this.http
-      .post(url, body, {headers: new HttpHeaders()
-        .set('Content-Type', 'application/x-www-form-urlencoded')
-        .set('Authorization', 'Bearer ' + token)})
+      .post(url, body, {
+        headers: new HttpHeaders()
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+          .set('Authorization', 'Bearer ' + token),
+        responseType: 'text'
+      })
       .subscribe(
         response => {
           this.message.next('Book added!');

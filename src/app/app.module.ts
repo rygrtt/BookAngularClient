@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   {path: 'add-book', component: AddBookComponent},
   {path: 'add-note', component: AddNoteComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
-]
+];
 
 @NgModule({
   declarations: [
@@ -46,6 +46,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [BookService, LoginService, NoteService, CitationService, ErrorHandlerService],
   bootstrap: [AppComponent]
