@@ -23,10 +23,6 @@ export class BookBoxComponent implements OnInit {
     this.getBooks();
   }
 
-  isLoggedIn(): boolean {
-    return this.loginService.isLoggedIn();
-  }
-
   getBooks(): void {
     this.bookService.getBooks()
       .subscribe(books => {
@@ -37,4 +33,9 @@ export class BookBoxComponent implements OnInit {
   loadNotes(book: Book): void {
     this.loadingService.loadNotes(book);
   }
+
+  isLoggedIn(): boolean {
+    return this.loginService.isLoggedIn();
+  }
+
 }
